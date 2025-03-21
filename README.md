@@ -1,7 +1,3 @@
-Here's your **updated README.md**, incorporating **regression analysis on hydrocarbon (HC) production and associated gas (AG)** while comparing both since **AG is a byproduct of crude extraction**. Also, I have **removed the example code and updated the license to Apache**.  
-
----
-
 # **Hydrocarbon Analytics and Modeling**  
 
 ## **Overview**  
@@ -83,6 +79,3 @@ Contributions are welcome! Feel free to **open an issue or submit a pull request
 ## **License**  
 This project is licensed under the **Apache License 2.0**.  
 
----
-
-This version includes **regression analysis on HC vs. AG production**, removes example code, and updates the license. Let me know if anything else needs to be refined! 🚀

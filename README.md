@@ -1,81 +1,99 @@
-# **Hydrocarbon Analytics and Modeling**  
-
 ## **Overview**  
-This project provides a **comprehensive analysis and forecasting model** for **Nigeria's crude oil and natural gas production**, integrating **exploratory data analysis (EDA), regression modeling, and time series forecasting**.  
+This repository contains a comprehensive analysis and forecasting framework for Nigeria’s crude oil and gas production. It includes data analytics, statistical modeling, and machine learning techniques to evaluate production trends, OPEC quota compliance, market dynamics, and future projections.  
 
-We examined **historical production trends, OPEC quotas, price fluctuations, offshore vs. onshore production, and different contract types (JV, PSC, SR)**. Additionally, we analyzed the relationship between **hydrocarbon (HC) production and associated gas (AG), given that AG is a byproduct of crude oil extraction**. The analysis highlights **economic opportunities and constraints**, identifying key policy implications.  
+The work leverages historical data from NUPRC, NMDPRA, and OPEC reports to analyze key industry patterns, identify inefficiencies, and provide actionable insights. The forecasting models use both traditional time series techniques and machine learning to improve prediction accuracy.  
 
----
-
-## **Key Findings**  
-
-1. **Production vs. OPEC Quota Compliance**  
-   - Nigeria has consistently **underperformed relative to its OPEC quota**, revealing operational inefficiencies.  
-
-2. **Revenue Loss in 2022**  
-   - Despite a surge in global oil prices, **production remained low**, leading to **missed economic gains**.  
-
-3. **Yearly, Monthly & Year-over-Year (YoY) Analysis**  
-   - Conducted **detailed trend analysis** of oil & gas production at **monthly and yearly intervals**.  
-   - Identified **seasonal variations** and **production declines** over time.  
-
-4. **Offshore vs. Onshore Production Analysis**  
-   - Compared **offshore vs. onshore crude oil & gas production**.  
-   - Analyzed efficiency and trends between both production environments.  
-
-5. **Contract Type Analysis (JV, PSC, SR)**  
-   - Assessed production trends under **Joint Ventures (JV), Production Sharing Contracts (PSC), and Sole Risk (SR)**.  
-   - Identified differences in performance across contract types.  
-
-6. **Regression Analysis of Hydrocarbon (HC) Production vs. Associated Gas (AG)**  
-   - **Performed regression analysis to quantify the relationship between crude oil (HC) and associated gas (AG) production**.  
-   - Compared HC and AG production trends to assess **efficiency in gas utilization** and **flaring reduction strategies**.  
-
-7. **Forecasting with Hybrid Models**  
-   - Developed a **Hybrid ARIMA-XGBoost model**, leveraging **multiple lag-based predictions** to refine forecasts.  
-   - Aggregated **multi-lag XGBoost outputs** to improve predictive accuracy.  
+## **Key Objectives**  
+- **Production Analysis:** Monthly, yearly, and year-on-year (YoY) analysis of Nigeria’s hydrocarbon production.  
+- **Market & Policy Evaluation:** Assessing Nigeria’s compliance with OPEC quotas and revenue implications of production trends.  
+- **Machine Learning Forecasting:** Implementing ARIMA, XGBoost, and hybrid models to predict future production trends.  
+- **Structural Insights:** Offshore vs. onshore production comparison, contract types (JV, PSC, SR), and regression analysis between hydrocarbon (HC) and associated gas (AG).  
 
 ---
 
-## **Work Completed**  
+## **1. Production Analysis**  
+We analyzed Nigeria’s crude oil and natural gas production using monthly and yearly datasets from the Nigerian Upstream Petroleum Regulatory Commission (NUPRC) and the Nigerian Midstream and Downstream Petroleum Regulatory Authority (NMDPRA).  
 
-### **1️⃣ Oil & Gas Production Analysis**  
-- **Performed yearly, monthly, and YoY trend analysis** for both **crude oil and gas production**.  
-- Compared **actual production vs. OPEC quotas** over time.  
-- **Analyzed offshore vs. onshore production performance**.  
-- **Evaluated contract-based production trends** (JV, PSC, SR).  
-- **Performed regression analysis of HC vs. AG production**.  
-- Visualized data using **Matplotlib & Seaborn** for **dual-axis plots and trend graphs**.  
+- **Comparison of actual production vs. OPEC quota.**  
+- **Evaluation of key terminals influencing overall output.**  
+- **Yearly, monthly, and YoY comparisons to detect trends and anomalies.**  
+- **Analysis of offshore vs. onshore production patterns and contract types (JV, PSC, SR).**  
 
-### **2️⃣ Regression Analysis: HC vs. AG Production**  
-- Investigated the relationship between **crude oil production (HC) and associated gas (AG)**.  
-- **Built a regression model** to quantify the correlation and trends.  
-- **Examined how production fluctuations impact gas utilization**.  
-
-### **3️⃣ Time Series Forecasting (ARIMA-XGBoost Hybrid)**  
-- Implemented an **ARIMA model** to capture long-term production trends.  
-- Designed an **XGBoost-based residual correction** to enhance forecasts.  
-- Developed a **multi-lag XGBoost ensemble approach**, combining forecasts from `3, 6, and 12` lag periods.  
-- Generated hybrid forecasts for:  
-  ✅ **Crude Oil (MMbbls/day, bbls)**  
-  ✅ **Natural Gas (BCF/day, MMSCF)**  
+### **Findings:**  
+- Nigeria has consistently produced below its allocated OPEC quota.  
+- Significant production volatility, especially in 2022, due to operational challenges.  
+- Key terminals like Bonny and Forcados have a major impact on the overall daily average production.  
 
 ---
 
-## **Installation & Setup**  
+## **2. Market & Economic Insights**  
+To assess Nigeria’s ability to capitalize on global oil price movements, we examined how production trends align with oil price fluctuations and OPEC policies.  
 
-Clone the repository:  
+- **2022 Oil Price Surge and Revenue Loss:** Despite high oil prices, Nigeria's low production levels led to missed revenue opportunities.  
+- **Impact of Force Majeure Events:** Examined disruptions from vandalism, repairs, and regulatory shutdowns on production stability.  
+- **NMDPRA Gas Supply Report Analysis:** Identified imbalances in Nigeria’s gas supply, comparing domestic sales, export volumes, and gas flaring levels.  
 
-```bash
-git clone https://github.com/your-username/Hydrocarbon_Analytics_and_Modelling.git
-cd Hydrocarbon_Analytics_and_Modelling
-```
+### **Findings:**  
+- Production remained low during high oil price periods, leading to revenue losses.  
+- Domestic gas supply struggled to meet demand despite high export volumes.  
+- Gas flaring remains a persistent issue, affecting environmental and economic factors.  
 
-## **Contributing**  
-Contributions are welcome! Feel free to **open an issue or submit a pull request**.  
+---
+
+## **3. Forecasting & Modeling**  
+We developed forecasting models to predict future hydrocarbon production using time series and machine learning approaches.  
+
+### **Approaches Used:**  
+1. **ARIMA Model**  
+   - Performed stationarity tests using ADF to determine differencing needs.  
+   - Used Auto-ARIMA for optimal parameter selection.  
+   - Forecasted production trends assuming a random-walk behavior.  
+
+2. **XGBoost Model**  
+   - Created lagged features to train an XGBoost regressor.  
+   - Explored different lag values (3, 6, 12, 18, 24 months) to identify optimal forecasting windows.  
+   - Evaluated performance using RMSE and forecast accuracy.  
+
+3. **Hybrid ARIMA-XGBoost Model**  
+   - Combined ARIMA’s linear forecasting with XGBoost’s ability to model residual errors.  
+   - Improved accuracy by reducing forecast bias seen in individual models.  
+   - Developed a multi-lag framework that aggregates forecasts from different time lags.  
+
+### **Findings:**  
+- The **ARIMA model alone** assumes a constant production level due to its differencing order (0,1,0).  
+- The **XGBoost model alone** effectively captures patterns within the training set but struggles slightly with the test data, especially at the tail end. While it follows short-term fluctuations well, its performance declines when applied to unseen data, indicating potential overfitting or difficulty adapting to new trends.  
+- The **hybrid model outperforms both ARIMA and XGBoost**, providing more balanced and realistic forecasts. It effectively captures fluctuations in the training set and maintains consistency in the test set. It successfully adapts to unseen data without significant deviations, ensuring stability in predictions. While the model corrects ARIMA’s residuals effectively, its ability to track long-term trends can still be influenced by structural breaks in the data as seen in the Non-Associated gas forecasting.
+---
+
+## **4. Technical Implementation**  
+- **Data Preprocessing:** Cleaning, transforming, and structuring datasets for analysis.  
+- **Visualization & Trend Analysis:** Using Pandas, Matplotlib, and Seaborn for insights.  
+- **Model Training & Evaluation:** Implementing ARIMA and XGBoost with hyperparameter tuning.  
+- **Multi-Lag Forecasting:** A weighted approach to balance short-term and long-term lag contributions.  
+
+---
+
+## **5. Next Steps**  
+- **Evaluate the model with additional real-world data** as new production reports are released.  
+- **Retrain and refine the models** using an updated dataset covering 6-12 months.  
+- **Perform long-term forecasting** for the next year to assess industry outlook.  
+
+---
+
+## **Usage Instructions**  
+To get started with this project, follow these steps:  
+
+1. **Clone the repository**  
+   ```bash
+   git clone https://github.com/peterobarotu/Hydrocarbon_Analytics_and_Modelling.git
+   ```  
+2. **Navigate to the project directory**  
+   ```bash
+   cd Hydrocarbon_Analytics_and_Modelling
 
 ---
 
 ## **License**  
-This project is licensed under the **Apache License 2.0**.  
+This project is licensed under the Apache License 2.0.  
 
+---

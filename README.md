@@ -94,6 +94,8 @@ To get started with this project, follow these steps:
 ---
 
 ## **License**  
-This project is licensed under the Apache License 2.0.  
+This project is licensed under the **Creative Commons Attribution 4.0 International (CC BY 4.0) License**. You are free to share and adapt the material as long as proper credit is given.  
+
+For full details, see the [LICENSE.txt](./LICENSE.txt) file. 
 
 ---
